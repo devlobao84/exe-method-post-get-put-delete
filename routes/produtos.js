@@ -9,7 +9,7 @@ router.get('/sucesso', ProdutoController.sucesso);
 router.get('/:id/editar', ProdutoController.viewAttForm);
 router.put('/editar', ProdutoController.editar);
 router.get('/', ProdutoController.listarProdutos);
-router.delete('/deletar/:id', ProdutoController.deletarProduto)
+router.delete('/deletar/:id', ProdutoController.deletarProduto);
 
 module.exports = router; 
 

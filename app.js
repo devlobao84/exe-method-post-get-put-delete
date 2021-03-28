@@ -8,6 +8,9 @@ var methodOverride = require('method-override')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos');
+var usuarioRouter = require('./routes/usuarios');
+var logMiddleware = require('./middlewares/logSite');
+
 
 var app = express();
 
@@ -21,10 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(logMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter);
+app.use('/usuarios', usuarioRouter);
+app.use('/arquivo', usuarioRouter);
+
+app.use((req, res) =>{
+  return res.status(404).render('not-found'); 
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
