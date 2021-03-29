@@ -10,5 +10,8 @@ function logSite(req, res, next) {
 module.exports = logSite
 
 
+//TESTE DE EXERCÍCIO APAGAR QUANDO TERMINAR 
 
- 
+
+
+

@@ -13,6 +13,7 @@ let UsuarioController = {
      salvarForm:(req, res) => {
           console.log(req)
      let {nome, email, senha} = req.body 
+     //Trabalhando com Multer Upload na linha 3, 17 e 19
      let {files} = req
      let senhaCrip = bcrypt.hashSync(senha, 10)
      let usuario = JSON.stringify({nome, email, senha:senhaCrip, avatar:files[0]})
@@ -33,13 +34,10 @@ let UsuarioController = {
      if (email != usuarioSalvo.email){
           return res.send('Usuario inválido')
      }
-
      if(!bcrypt.compareSync(senha, usuarioSalvo.senha)){
           return res.send("Senha inválida")
      }
      res.redirect("/produtos")
-
-}
-
+},
 }
 module.exports = UsuarioController 
