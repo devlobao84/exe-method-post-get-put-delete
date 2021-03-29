@@ -39,9 +39,7 @@ let UsuarioController = {
      }
      res.redirect("/produtos")
 
-     }
-
-     
+}
 
 }
 module.exports = UsuarioController 
