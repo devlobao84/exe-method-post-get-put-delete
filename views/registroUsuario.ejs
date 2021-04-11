@@ -11,6 +11,19 @@
 <body class="gradiente">
   
      <h1 class=" col titulo">Cadastro de Usuários</h1>
+     <% if(typeof(errors)  != "undefined"){%>
+      <p style="color:red">ERROR</p>
+      <ul>
+           <% errors.forEach((error)=>{ %>
+               <li class="error-form"><%= error.msg %></li>
+          
+          <% }) %>
+      </ul>   
+         
+     <% } %>
+
+
+
      <div class="div"></div>
      <form class="formulario" action="/usuarios/criar" method="POST" enctype="multipart/form-data">
           <h3 class="label">Nome:</h3>

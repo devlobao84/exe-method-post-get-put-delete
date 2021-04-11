@@ -4,16 +4,28 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
      <title>Document</title>
 </head>
-<body>
-     <h1>Login de Usuários</h1>
-     <form action="/usuarios/login" method="POST">         
-          <h3>Email</h3>
-          <input type="email" name="email" id="">
-          <h3>Senha</h3>
-          <input type="password" name="senha" id="">
-          <button type="submit">Logar</button>   
+<body class="gradiente">
+     
+     <h1 class=" col titulo">Login de Usuários</h1>
+     <form class="formulario" action="/usuarios/login" method="POST"> 
+          <div class="div">        
+          <h3 class="label">Email</h3>
+          <input class="form-control item" type="email" name="email" id="">
+          <h3 class="label">Senha</h3>
+          <input  class="form-control item" type="password" name="senha" id="">
+          </div>
+          <br>
+          <div>
+          <input  class="box-login" type="checkbox" name="logado" id="">
+          <br>
+          <label class="login" for="">Quero me manter logado!</label>
+          </div>         
+          <button class="btn btn-primary  enviar" type="submit">Logar</button>   
      </form>
+     
 </body>
 </html>

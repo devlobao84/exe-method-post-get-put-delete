@@ -57,7 +57,7 @@ será redirecionado apra a view
      listarProdutos: (req, res) => {
          let produtos = fs.readFileSync(produtosJson, {encoding: 'utf-8'})
          produtos = JSON.parse(produtos)
-          res.render('listaprodutos', {listaProdutos:produtos})
+         res.render('listaprodutos', {listaProdutos:produtos, usuario: req.session.usuario})
      },
 
 // Listar-deletar produtos
